@@ -7,7 +7,7 @@
 
 学术论文搜索、智能筛选、多平台推送 —— 基于 [MCP 协议](https://modelcontextprotocol.io/)。
 
-兼容所有 MCP 客户端：Claude Code、Cursor、Codex CLI、Gemini CLI、OpenClaw、VS Code、Zed 等。
+兼容所有 MCP 客户端：Claude Desktop、Claude Code、Cursor、Trae、Codex CLI、Gemini CLI、OpenClaw、VS Code、Zed 等。
 
 > ⚠️ **项目仍处于早期开发阶段**，很多功能尚未充分验证，可能存在 bug 或不稳定之处。
 > 如遇问题，请多多海涵，欢迎通过下方联系方式反馈！
@@ -64,7 +64,7 @@ brew install paper-distill-mcp
 docker run -i --rm ghcr.io/eclipse-cj/paper-distill-mcp
 ```
 
-国内用户：`docker run -i --rm ghcr.nju.edu.cn/eclipse-cj/paper-distill-mcp`
+国内用户建议使用 pip 安装（清华源），Docker 镜像暂不支持国内加速。
 
 **从源码安装（开发者）:**
 
@@ -79,6 +79,21 @@ python3 -m venv .venv && .venv/bin/pip install --upgrade pip && .venv/bin/pip in
 ---
 
 ## 🔗 连接 AI 客户端
+
+### Claude Desktop
+
+添加到 `claude_desktop_config.json`（Settings → Developer → Edit Config）：
+
+```json
+{
+  "mcpServers": {
+    "paper-distill": {
+      "command": "uvx",
+      "args": ["paper-distill-mcp"]
+    }
+  }
+}
+```
 
 ### Claude Code
 
@@ -98,6 +113,10 @@ claude mcp add paper-distill -- uvx paper-distill-mcp
   }
 }
 ```
+
+### Trae
+
+设置 → MCP → 添加 MCP Server，JSON 配置同上。
 
 ### Codex CLI (OpenAI)
 
@@ -164,6 +183,8 @@ mcporter list
 
 | 客户端 | 配置路径 |
 |--------|----------|
+| Claude Desktop | `claude_desktop_config.json` |
+| Trae | 设置 → MCP → 添加 |
 | Cursor | `~/.cursor/mcp.json` |
 | VS Code | `.vscode/mcp.json` |
 | Windsurf | `~/.codeium/windsurf/mcp_config.json` |
@@ -294,7 +315,7 @@ paper-distill-mcp --transport http --port 8765
 | `site_repo_path` | 本地 paper-library 仓库路径 |
 
 配置步骤（AI agent 会引导你完成）：
-1. Fork [paper-library-template](https://github.com/Eclipse-Cj/paper-library-template)（即将开源）
+1. 使用 [paper-library-template](https://github.com/Eclipse-Cj/paper-library-template) 模板创建仓库（点击 "Use this template"）
 2. 连接 Vercel → 部署
 3. 在 Vercel 创建 deploy hook（Settings > Git > Deploy Hooks）
 4. 告诉 agent hook URL → 保存到 `configure(site_deploy_hook=...)`
