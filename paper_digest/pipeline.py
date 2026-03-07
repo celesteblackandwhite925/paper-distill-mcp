@@ -152,7 +152,7 @@ async def pool_refresh(config: dict, data_dir: Path, single_topic: str | None = 
             papers = [p for p in papers if (p.get("doi") or "").lower() not in history_dois]
             pool = add_to_pool(pool, papers, single_topic)
             # Re-assign scan batches to include new papers
-            num_batches = config.get("scan_batches", 3)
+            num_batches = config.get("scan_batches", 2)
             pool = assign_scan_batches(pool, num_batches=num_batches)
             force_topic(data_dir, single_topic)
     else:
@@ -177,7 +177,7 @@ async def pool_refresh(config: dict, data_dir: Path, single_topic: str | None = 
             pool = add_to_pool(pool, papers, key)
 
         # Assign scan batches per config (default: 2)
-        num_batches = config.get("scan_batches", 3)
+        num_batches = config.get("scan_batches", 2)
         pool = assign_scan_batches(pool, num_batches=num_batches)
 
     save_pool(data_dir, pool)

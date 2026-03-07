@@ -767,7 +767,7 @@ def configure(
         w_impact: Ranking weight for citation impact (default 0.15)
         w_novelty: Ranking weight for novelty/unseen (default 0.10)
         picks_per_reviewer: Papers each reviewer selects per scan (default 5)
-        scan_batches: Number of scan batches per pool cycle (default 3, pool is reviewed over batches+1 days)
+        scan_batches: Number of scan batches per pool cycle (default 2, pool is reviewed over batches+1 days)
         site_deploy_hook: Vercel deploy hook URL for auto-deploying paper library website
         site_repo_path: Local path to the paper library site repo (for pushing digest JSON)
         summarizer: Who handles paper summarization to save tokens. Options:
@@ -919,7 +919,7 @@ def _pipeline_config(data_dir: Path) -> dict:
         "custom_focus": pcfg.get("custom_focus", ""),
         "review_mode": pcfg.get("review_mode", "single"),
         "ranking_weights": pcfg.get("ranking_weights", {}),
-        "scan_batches": pcfg.get("scan_batches", 3),
+        "scan_batches": pcfg.get("scan_batches", 2),
     }
 
 
