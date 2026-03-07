@@ -200,7 +200,7 @@ paper-distill-mcp --transport http --port 8765
 
 ## 🎯 首次使用
 
-安装后调用 `setup()` — 系统检测到全新安装，会引导你的 AI 完成初始化：
+安装连接客户端后，告诉 Agent「初始化 paper-distill」，Agent 会自动调用 `setup()` 并引导你完成配置：
 
 1. **研究方向** — 用自然语言描述你的兴趣，AI 提取关键词
 2. **推送平台** — 设置 Telegram / Discord / 飞书 / 企业微信（可选）
