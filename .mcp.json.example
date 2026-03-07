@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "paper-distill": {
+      "command": "paper-distill-mcp",
+      "env": {
+        "PAPER_DISTILL_DATA_DIR": "/path/to/paper-distill",
+        "OPENALEX_EMAIL": "your-email@example.com"
+      }
+    }
+  }
+}

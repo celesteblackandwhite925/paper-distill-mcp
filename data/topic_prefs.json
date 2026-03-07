@@ -1,0 +1,16 @@
+{
+  "topics": {
+    "example-topic": {
+      "weight": 1.0,
+      "blocked": false,
+      "label": "Example Topic",
+      "keywords": [
+        "keyword1",
+        "keyword2",
+        "keyword3"
+      ]
+    }
+  },
+  "max_per_topic": 2,
+  "max_total": 5
+}

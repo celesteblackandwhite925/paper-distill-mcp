@@ -1,0 +1,31 @@
+# Secrets
+.env
+config/config.yaml
+
+# MCP (contains local paths)
+.mcp.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Generated
+*.pdf
+
+# Data (user-specific)
+data/papers.jsonl
+data/pushes.jsonl
+data/interests.jsonl
+data/candidates.jsonl
+data/ideas.jsonl
+data/tmp_*
+data/sessions.jsonl
+*.log
