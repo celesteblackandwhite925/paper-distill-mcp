@@ -296,6 +296,28 @@ paper-distill-mcp --transport http --port 8765
 | 飞书 | `FEISHU_WEBHOOK_URL` | `"feishu"` |
 | 企业微信 | `WECOM_WEBHOOK_URL` | `"wecom"` |
 
+> ⚠️ **重要：环境变量必须配置在 MCP 客户端配置文件的 `env` 字段中**，而不是系统环境变量。
+> 否则 `send_push()` 无法获取 webhook 地址，AI 可能会生成脚本（如 PowerShell）直接调用 webhook，
+> 导致中文乱码等编码问题。
+
+配置示例（以企业微信为例）：
+
+```json
+{
+  "mcpServers": {
+    "paper-distill": {
+      "command": "uvx",
+      "args": ["paper-distill-mcp"],
+      "env": {
+        "WECOM_WEBHOOK_URL": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY"
+      }
+    }
+  }
+}
+```
+
+添加后需**重启 MCP 客户端**使配置生效。
+
 推送消息格式（固定）：
 ```
 1. 论文标题 (年份)
