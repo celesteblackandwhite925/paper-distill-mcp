@@ -364,6 +364,39 @@ paper-distill-mcp --transport http --port 8765
 
 > ⚠️ 注意：Vercel.app 域名在中国大陆可能无法直接访问。建议绑定自定义域名，或使用 Cloudflare Pages 作为替代。
 
+### Zotero 集成
+
+一键收藏论文到 Zotero 文献管理器。需要 Zotero 账号和 API 密钥。
+
+**获取步骤：**
+
+1. **API Key**：打开 [zotero.org/settings/keys/new](https://www.zotero.org/settings/keys/new) → 勾选 "Allow library access" + "Allow write access" → Save Key
+2. **Library ID**：打开 [zotero.org/settings/keys](https://www.zotero.org/settings/keys) → 页面顶部显示 "Your userID for use in API calls is **123456**"
+
+**配置到 MCP 客户端：**
+
+```json
+{
+  "mcpServers": {
+    "paper-distill": {
+      "command": "uvx",
+      "args": ["paper-distill-mcp"],
+      "env": {
+        "ZOTERO_LIBRARY_ID": "你的 userID",
+        "ZOTERO_API_KEY": "你的 API Key"
+      }
+    }
+  }
+}
+```
+
+> ⚠️ **重要：必须在 MCP 客户端配置的 `env` 字段中设置这两个变量。**
+> 如果未配置，AI 可能会尝试直接调用 Zotero API 而非使用内置的 `collect()` 工具，
+> 导致论文条目只有 DOI、缺少标题和作者等元数据。
+
+配置完成后，在推送结果中回复 `collect 1 3` 即可将第 1、3 篇论文保存到 Zotero，
+并自动按研究方向归入对应的 Zotero 文件夹。
+
 ### 集成 & 环境变量
 
 | 变量 | 说明 | 是否必需 |
