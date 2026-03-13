@@ -346,6 +346,12 @@ async def search_all(query: str, top: int = 10) -> list[dict]:
         engine_names.append("dblp")
     except ImportError:
         pass
+    try:
+        from search.core_search import search_core
+        tasks.append(search_core(query, max_results=20))
+        engine_names.append("core")
+    except ImportError:
+        pass
 
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
@@ -369,6 +375,14 @@ async def search_all(query: str, top: int = 10) -> list[dict]:
         n_sources = len(p.get("source", "").split(","))
         p["_score"] = n_sources * 100 - p.get("_relevance_rank", 50)
     merged.sort(key=lambda p: (p["_score"], p.get("citation_count") or 0), reverse=True)
+
+    # Enrich: try Unpaywall for papers missing open_access_url
+    try:
+        from search.unpaywall_lookup import enrich_open_access
+        merged = await enrich_open_access(merged)
+    except ImportError:
+        pass
+
     return merged
 
 

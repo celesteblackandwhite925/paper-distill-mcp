@@ -36,14 +36,14 @@ TITLE_SIMILARITY_THRESHOLD = 0.85
 
 # Source priority for each field (first = highest priority)
 FIELD_SOURCE_PRIORITY: dict[str, list[str]] = {
-    "tldr": ["s2", "deepseek", "openalex", "pubmed", "arxiv", "pwc"],
-    "citation_count": ["openalex", "s2", "pubmed", "arxiv", "pwc", "deepseek"],
-    "mesh_terms": ["pubmed", "openalex", "s2", "arxiv", "pwc", "deepseek"],
-    "abstract": ["pubmed", "s2", "openalex", "arxiv", "pwc", "deepseek"],
-    "open_access_url": ["arxiv", "openalex", "s2", "pwc", "pubmed", "deepseek"],
-    "categories": ["arxiv", "pwc", "s2", "openalex", "pubmed", "deepseek"],
-    "authors": ["pubmed", "s2", "openalex", "arxiv", "pwc", "deepseek"],
-    "journal": ["pubmed", "openalex", "s2", "arxiv", "pwc", "deepseek"],
+    "tldr": ["s2", "deepseek", "openalex", "pubmed", "arxiv", "pwc", "core"],
+    "citation_count": ["openalex", "s2", "pubmed", "arxiv", "pwc", "deepseek", "core"],
+    "mesh_terms": ["pubmed", "openalex", "s2", "arxiv", "pwc", "deepseek", "core"],
+    "abstract": ["pubmed", "s2", "openalex", "arxiv", "pwc", "deepseek", "core"],
+    "open_access_url": ["arxiv", "core", "unpaywall", "openalex", "s2", "pwc", "pubmed", "deepseek"],
+    "categories": ["arxiv", "pwc", "s2", "openalex", "pubmed", "deepseek", "core"],
+    "authors": ["pubmed", "s2", "openalex", "arxiv", "pwc", "deepseek", "core"],
+    "journal": ["pubmed", "openalex", "s2", "arxiv", "pwc", "deepseek", "core"],
 }
 
 
