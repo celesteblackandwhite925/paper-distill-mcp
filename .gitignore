@@ -29,3 +29,4 @@ data/ideas.jsonl
 data/tmp_*
 data/sessions.jsonl
 *.log
+.mcpregistry_*
